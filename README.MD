@@ -1,0 +1,1 @@
+Getting swagger to work with VS 2015
