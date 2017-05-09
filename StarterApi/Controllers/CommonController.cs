@@ -11,18 +11,19 @@ namespace StarterApi.Controllers
 {
     public class CommonController : ApiController
     {
+
         [HttpGet]
-        public async Task<HttpResponseMessage> GetTestList(int id)
+        public HttpResponseMessage GetTestList(int id)
         {
             HttpResponseMessage msg = null;
             try
             {
-                var principal = User as ClaimsPrincipal;
+                //var principal = User as ClaimsPrincipal;
                 List<DDLDispValueVM> ctrList = new List<DDLDispValueVM> {
                    new DDLDispValueVM { Disp="one", Value="1"},
                    new DDLDispValueVM { Disp="two", Value="2"}
                 };
-                //var ctrList = await commonBLLHdl.GetCenterListByUserId(id);
+
                 msg = Request.CreateResponse(HttpStatusCode.OK, ctrList);
             }
             catch (Exception ex)
